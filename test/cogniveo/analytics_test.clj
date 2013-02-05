@@ -11,6 +11,6 @@
 
 (fact
 	"we can list users' experiments"
-	(count (get-experiments (state) {:user "tillda"})) => 1
-  (count (get-experiments (state) {:user "jirka" :name "Def"})) => 2)
+	(count (get-experiments (state) "tillda")) => 1
+  (count (get-experiments (state) "jirka" {:name "Def"})) => 2)
 
