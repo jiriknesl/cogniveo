@@ -10,11 +10,14 @@
 (defn get-experiments 
 	([state user-id] (get-experiments state user-id "" {}))
 	([state user-id experiment-name] (get-experiments state user-id experiment-name {}))
-	([state user-id experiment-name params] (filter (fn [row] 
+	([state user-id experiment-name params] (get-experiments state user-id experiment-name params {}))
+	([state user-id experiment-name params time-params] (filter (fn [row] 
 		(and
 			(= user-id ((row :user) :id))
 			(or (= experiment-name "") (= experiment-name ((row :experiment) :name)))
 			(= (nth (diff ((row :experiment) :params) params) 1) nil)		 
-	)) state)
+			(or (= (time-params :from) nil) (>= (-> row :experiment :timestamp) (time-params :from)))
+			(or (= (time-params :to) nil) (<= (-> row :experiment :timestamp) (time-params :to)))
+		)) state)
 	)
 )
