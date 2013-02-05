@@ -17,5 +17,5 @@
 
 (fact
 	"can parse dot-notation params"
-	(get-params {:param.foo "foovalue" :param.bar "barvalue" :a 1 :b 2}) => {:foo "foovalue" :bar "barvalue"}
+	(get-params {"param.foo" "foovalue" "param.bar" "barvalue" "a" 1 "b" 2}) => {:foo "foovalue" :bar "barvalue"}
 )
