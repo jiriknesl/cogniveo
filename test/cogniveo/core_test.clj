@@ -2,4 +2,4 @@
   (:use midje.sweet
         cogniveo.core))
 
-(fact "FIXME TEST" (+ 1 1) => 1)
+(fact "FIXME TEST" (+ 1 1) => 2)
