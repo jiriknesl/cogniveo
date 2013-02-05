@@ -1,7 +1,5 @@
 (ns cogniveo.core-test
-  (:use clojure.test
+  (:use midje.sweet
         cogniveo.core))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(fact "FIXME TEST" (+ 1 1) => 1)
