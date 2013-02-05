@@ -1,0 +1,7 @@
+(ns cogniveo.core-test
+  (:use clojure.test
+        cogniveo.core))
+
+(deftest a-test
+  (testing "FIXME, I fail."
+    (is (= 0 1))))
