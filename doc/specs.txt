@@ -1,0 +1,23 @@
+
+
+	POST
+		{
+			user : { id : 123456 },
+			experiment : {
+				name : "glogsterHtmlViewerPerformance",
+				id : 12345,
+				params : {
+					technology : "canvas",
+					browser : "ios-61-safari"
+				},
+				timestamp : "...",
+				values : {
+					loading : 50,
+					rendering : 200
+				}
+			}
+		}
+
+
+	GET /user
+	GET /user/experimentName/?from=...&to=...&param.paramName=paramValue
