@@ -2,4 +2,15 @@
   (:use midje.sweet
         cogniveo.analytics))
 
-(fact "FIXME TEST" (+ 1 1) => 2)
+(fact
+	"we can list users' experiments"
+	(count (get-experiments state "tillda")) => 1
+
+	(provided
+		(state) => [
+			{:user {:id "tillda"}},
+			{:user {:id "jirka"}},
+		])
+
+)
+
